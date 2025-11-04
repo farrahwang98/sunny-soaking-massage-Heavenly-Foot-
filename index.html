@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sunny Soaking Massage 🌞🫧 — Whittier, CA</title>
+  <meta name="description" content="Sunny Soaking Massage (Heavenly Foot) — cute spa in Whittier, CA. Special package, services, add-ons, loyalty card, and Room Tour slideshow." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Short+Stack&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:#2b2b2b; --muted:#6b7280; --card:#ffffff; --border:#ffdce5;
+      --pink1:#ffe4f1; --pink2:#ffd1e8; --pink3:#ffc2e0; --accent:#ff8dc7; --accent-2:#ffafd1; --accent-3:#a78bfa;
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);
+      background: radial-gradient(1200px 800px at 15% -10%, var(--pink2) 0%, var(--pink1) 50%, #fff 70%),
+                  radial-gradient(1000px 600px at 110% 10%, #ffeaf4 0%, #ffffff 60%);
+      overflow-x:hidden;
+    }
+    .floaty{position:fixed;inset:0;pointer-events:none;z-index:-1}
+    .bubble{position:absolute;width:220px;height:220px;border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, #fff 0%, var(--pink3) 60%, #ffd6ec 100%);
+      filter:blur(10px);opacity:.45;animation: drift 18s linear infinite}
+    .bubble:nth-child(2){left:70%;top:10%;animation-duration:22s;width:260px;height:260px;opacity:.35}
+    .bubble:nth-child(3){left:10%;top:60%;animation-duration:25s;width:280px;height:280px;opacity:.3}
+    @keyframes drift { 0% { transform: translateY(0) translateX(0) rotate(0deg) } 50% { transform: translateY(-20px) translateX(10px) rotate(8deg) } 100% { transform: translateY(0) translateX(0) rotate(0deg) } }
+    .hand{font-family:"Short Stack",cursive}
+    a{color:inherit} .container{max-width:1100px;padding:24px;margin:0 auto}
+    .hero{display:grid;gap:14px;padding:42px 0 18px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo-emoji{font-size:34px;animation:pop 2s ease-in-out infinite}
+    @keyframes pop{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    h1{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:4px 0}
+    .subtitle{color:#7c8499;font-size:16px}
+    .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+    .btn{padding:12px 16px;border-radius:16px;border:2px solid #00000020;background:#fff;box-shadow:4px 4px 0 #0001;text-decoration:none;font-weight:700;transition:.12s transform}
+    .btn:hover{transform:translate(-1px,-1px)} .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#4a0d23}
+    .bubble-chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px dashed #00000030;border-radius:999px;padding:6px 12px}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+    .card{grid-column:span 12;background:var(--card);border:2px solid var(--border);border-radius:22px;padding:18px;box-shadow:8px 8px 0 #0000000e}
+    .card h3{margin:0 0 10px;font-size:20px} .muted{color:var(--muted)}
+    .section-title{font-size:26px;margin:22px 0 12px}
+    .price-table{width:100%;border-collapse:collapse}
+    .price-table th,.price-table td{padding:10px 8px;text-align:left;border-bottom:1px dashed #ffd9e7}
+    .price-table th{font-weight:800} .price{font-weight:800}
+    .hours{display:grid;grid-template-columns:1fr auto;gap:8px} .hours div{padding:6px 0;border-bottom:1px dotted #ffd9e7}
+    .stamp-grid{display:grid;grid-template-columns:repeat(5,48px);gap:10px;justify-content:start}
+    .stamp{width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:3px dashed #f9a8d4;background:#fff0f6;font-size:22px}
+    .stamp:nth-child(10){border-color:#f59e0b;background:#fff7ed}
+    .ribbon{display:inline-block;background:linear-gradient(90deg,#60a5fa,#f472b6);color:#fff;padding:6px 10px;border-radius:999px;font-weight:800}
+    footer{margin:34px 0 18px;color:#6b7280;font-size:13px;text-align:center}
+    .sticky-cta{position:fixed;right:16px;bottom:16px;background:#fff;border:2px solid #00000020;border-radius:16px;padding:8px 12px;box-shadow:6px 6px 0 #0001}
+    .addon-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+    .addon{grid-column:span 6;background:#fff;border:2px dashed #00000030;border-radius:18px;padding:12px;display:flex;justify-content:space-between;align-items:center}
+    .addon h4{margin:0;font-size:16px}
+    .addon .price{font-size:16px}
+    @media (min-width: 900px){.addon{grid-column:span 4}}
+
+    /* Room Tour slider */
+    .tour-card{position:relative;overflow:hidden;border:2px solid #ffcfe2;background:linear-gradient(180deg,#fff0f7,#ffe6f3);}
+    .slider{position:relative;width:100%;height:380px;border-radius:16px;overflow:hidden}
+    .slides{display:flex;width:100%;height:100%;transition:transform .5s ease}
+    .slide{min-width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+    .slide img{width:100%;height:100%;object-fit:cover}
+    .nav-btn{position:absolute;top:50%;transform:translateY(-50%);background:#fff;border:2px solid #00000030;border-radius:12px;padding:8px 12px;cursor:pointer;font-weight:800;box-shadow:3px 3px 0 #0002}
+    .nav-btn:hover{transform:translateY(-50%) scale(1.02)}
+    .prev{left:10px} .next{right:10px}
+    .dots{display:flex;gap:8px;justify-content:center;margin-top:10px}
+    .dot{width:10px;height:10px;border-radius:50%;background:#fbcfe8;border:2px solid #f472b6;cursor:pointer}
+    .dot.active{background:#f472b6}
+  </style>
+</head>
+<body>
+  <div class="floaty" aria-hidden="true">
+    <div class="bubble" style="left:-5%; top:15%"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <header class="container hero">
+    <div class="logo">
+      <span class="logo-emoji">🌞🫧</span>
+      <div>
+        <h1>Sunny Soaking Massage <span class="muted">(Heavenly Foot)</span></h1>
+        <div class="bubble-chip hand">Cute • Cozy • Friendly 💖</div>
+      </div>
+    </div>
+    <p class="subtitle">💆‍♀️ Full body • 🦶 Foot reflexology • 💪 Deep tissue • 🎀 Combo packages</p>
+    <div class="cta">
+      <a class="btn primary" href="tel:+15622735105">📞 Call to Book • (562) 273-5105</a>
+      <a class="btn" href="#special">🌟 Special Offer</a>
+      <a class="btn" href="#prices">🪄 View Prices</a>
+      <a class="btn" href="#addons">🧴 Add‑ons</a>
+      <a class="btn" href="#loyalty">🎟 Loyalty Card</a>
+      <a class="btn" href="#tour">🏠 Room Tour</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="info" class="grid">
+      <div class="card">
+        <h3>Visit Us 🗺️</h3>
+        <p><strong>Address:</strong> 14153 Whittier Blvd #108, Whittier, CA 90605<br/>
+           <strong>Phone:</strong> <a href="tel:+15622735105">(562) 273-5105</a></p>
+        <h4 class="section-title">Hours ⏰</h4>
+        <div class="hours">
+          <div>Open Daily</div><div>10:00 AM – 9:30 PM</div>
+          <div>Last Intake</div><div>8:40 PM</div>
+          <div>After 9:00 PM</div><div>30‑minute sessions only</div>
+          <div>Note</div><div>Phone reservations prevail</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="special" class="grid">
+      <div class="card" style="grid-column:span 12; border-color:#f0abfc">
+        <h2 class="section-title">✨ Special Package (90 mins)</h2>
+        <p class="hand" style="font-size:18px">🔥 Limited Time Offer — Most Popular!</p>
+        <p class="muted">Deep Tissue or Swedish + Hot Stones & Foot Reflexology</p>
+        <table class="price-table" aria-label="Special Package Price">
+          <thead><tr><th>Package</th><th>Price</th></tr></thead>
+          <tbody><tr><td>90 mins</td><td class="price">$70</td></tr></tbody>
+        </table>
+        <div style="margin-top:10px">
+          <a class="btn primary" href="tel:+15622735105">Book the Special 💖</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="prices" class="grid" aria-label="Price List">
+      <h2 class="section-title" style="grid-column:span 12;">Services & Prices 💖</h2>
+
+      <div class="card">
+        <h3>Body Massage — Swedish 🌸</h3>
+        <p class="muted">Includes hot oil & hot stones.</p>
+        <table class="price-table"><thead><tr><th>Duration</th><th>Price</th></tr></thead>
+          <tbody>
+            <tr><td>30 mins</td><td class="price">$40</td></tr>
+            <tr><td>60 mins</td><td class="price">$50</td></tr>
+            <tr><td>90 mins</td><td class="price">$80</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Body Massage — Deep Tissue 💪</h3>
+        <table class="price-table"><thead><tr><th>Duration</th><th>Price</th></tr></thead>
+          <tbody>
+            <tr><td>60 mins</td><td class="price">$60</td></tr>
+            <tr><td>90 mins</td><td class="price">$90</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Combo Massage 🎀 (Foot + Body)</h3>
+        <p class="muted">Includes hot oil & hot stones. Private room available by reservation.</p>
+        <table class="price-table"><thead><tr><th>Package</th><th>Price</th></tr></thead>
+          <tbody>
+            <tr><td>30 mins Foot + 30 mins Body (60 mins)</td><td class="price">$45</td></tr>
+            <tr><td>30 mins Foot + 40 mins Body (70 mins)</td><td class="price">$55</td></tr>
+            <tr><td>45 mins Foot + 45 mins Body (90 mins)</td><td class="price">$65</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Foot Reflexology 🦶 (60 mins)</h3>
+        <table class="price-table"><thead><tr><th>Type</th><th>Price</th></tr></thead>
+          <tbody>
+            <tr><td>Regular</td><td class="price">$40</td></tr>
+            <tr><td>Foot Only</td><td class="price">$40</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Chair Massage (Shoulders & Back) 🪑</h3>
+        <table class="price-table"><thead><tr><th>Duration</th><th>Price</th></tr></thead>
+          <tbody>
+            <tr><td>30 mins</td><td class="price">$40</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card" style="grid-column:span 12">
+        <div class="bubble-chip hand">Facilities: 6 rooms + 3 sofa seats • Full body & Combo include hot oil & hot stones • Private room by reservation 🌟</div>
+      </div>
+    </section>
+
+    <section id="addons" class="grid">
+      <div class="card" style="grid-column:span 12">
+        <h2 class="section-title">Add‑ons 🧴</h2>
+        <p class="muted">Customize any service with these little treats:</p>
+        <div class="addon-grid">
+          <div class="addon"><h4>Essential Oil</h4><div class="price hand">+ $15</div></div>
+          <div class="addon"><h4>Sea Salt Foot Scrub</h4><div class="price hand">+ $5</div></div>
+          <div class="addon"><h4>Herbal Medicine</h4><div class="price hand">+ $10</div></div>
+          <div class="addon"><h4>Deep Tissue Upgrade</h4><div class="price hand">+ $10</div></div>
+          <div class="addon"><h4>Cupping</h4><div class="price hand">+ $20</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="loyalty" class="grid">
+      <div class="card" style="grid-column:span 12">
+        <h2 class="section-title">Loyalty Card 🎟 — 10 Stamps = <span class="ribbon">$20 OFF</span></h2>
+        <p>Collect one stamp per paid visit (minimum $40 service). On your 10th stamp, enjoy <strong>$20 off</strong> your next service. Paper stamp cards are available at the front desk.</p>
+        <div class="stamp-grid" aria-label="sample stamp card">
+          <div class="stamp">⭐</div><div class="stamp">⭐</div><div class="stamp">⭐</div><div class="stamp">⭐</div><div class="stamp">⭐</div>
+          <div class="stamp">⭐</div><div class="stamp">⭐</div><div class="stamp">⭐</div><div class="stamp">⭐</div><div class="stamp">🎉</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tour" class="grid">
+      <div class="card tour-card" style="grid-column:span 12">
+        <h2 class="section-title">💗 A Peek Inside Sunny Soaking Massage</h2>
+        <p class="muted">We have 6 cozy rooms and 3 comfy sofa seats. Private rooms available by reservation. Clean, warm, and relaxing environment — perfect for your next visit! ✨</p>
+        <div class="slider" aria-label="Room Tour slideshow">
+          <div class="slides">
+            <div class="slide"><img src="assets/front-desk.jpg" alt="Front desk and aquarium"></div>
+            <div class="slide"><img src="assets/single-room.jpg" alt="Single massage room"></div>
+            <div class="slide"><img src="assets/storefront.jpg" alt="Storefront"></div>
+            <div class="slide"><img src="assets/hallway.jpg" alt="Hallway with lights"></div>
+            <div class="slide"><img src="assets/double-room.jpg" alt="Double room with warm lights"></div>
+          </div>
+          <button class="nav-btn prev" aria-label="Previous">◀</button>
+          <button class="nav-btn next" aria-label="Next">▶</button>
+        </div>
+        <div class="dots" role="tablist" aria-label="Slide indicators">
+          <div class="dot" data-idx="0"></div>
+          <div class="dot" data-idx="1"></div>
+          <div class="dot" data-idx="2"></div>
+          <div class="dot" data-idx="3"></div>
+          <div class="dot" data-idx="4"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="y"></span> Sunny Soaking Massage (Heavenly Foot) • All rights reserved.</footer>
+  <a class="sticky-cta hand" href="tel:+15622735105">📞 Book Now</a>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Simple auto-playing slider
+    const slides = document.querySelector('.slides');
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    let idx = 0;
+    function go(i){
+      idx = (i + dots.length) % dots.length;
+      slides.style.transform = `translateX(-${idx*100}%)`;
+      dots.forEach((d,k)=>d.classList.toggle('active',k===idx));
+    }
+    go(0);
+    document.querySelector('.prev').addEventListener('click',()=>go(idx-1));
+    document.querySelector('.next').addEventListener('click',()=>go(idx+1));
+    dots.forEach(d=>d.addEventListener('click',()=>go(parseInt(d.dataset.idx))));
+    setInterval(()=>go(idx+1), 3500);
+  </script>
+</body>
+</html>
